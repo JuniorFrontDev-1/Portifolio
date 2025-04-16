@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serviços - J8nior</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <a href="index.html" class="logo">J8nior</a>
+
+    <!-- Ícone menu -->
+    <div class="menu-icon" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <!-- Botão fechar -->
+    <div class="close-btn" onclick="toggleMenu()">×</div>
+
+    <!-- Menu -->
+    <ul class="navbar-menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="servicos.html" class="ativo">Serviços</a></li>
+   
+      <li><a href="contatos.html">Contato</a></li>
+    </ul>
+  </header>
+  <div class="menu-overlay" onclick="toggleMenu()"></div>
+
+  <!-- Seção Serviços -->
+  <section class="projetos" id="servicos">
+    <h2>Meus Serviços</h2>
+    <p>Escolha o tipo de site ideal para o seu projeto:</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Landing Page</h3>
+        <p>Ideal para divulgação de produtos ou serviços. Layout moderno, responsivo e focado em conversão.</p>
+      </div>
+      <div class="card">
+        <h3>Site Institucional</h3>
+        <p>Para empresas ou profissionais que precisam de presença online. Inclui páginas como Sobre, Serviços e Contato.</p>
+      </div>
+      <div class="card">
+        <h3>Loja Virtual</h3>
+        <p>E-commerce completo com catálogo, carrinho de compras e integração com WhatsApp ou plataformas de pagamento.</p>
+      </div>
+    </div>
+    <a class="btn" href="https://wa.me/5511947008934" target="_blank">Solicitar Orçamento</a>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    Todos os direitos reservados - DevFront
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.navbar-menu');
+      const closeBtn = document.querySelector('.close-btn');
+      const overlay = document.querySelector('.menu-overlay');
+
+      menu.classList.toggle('active');
+      closeBtn.classList.toggle('active');
+      if (overlay) overlay.classList.toggle('active');
+    }
+
+    document.querySelectorAll('.navbar-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        const menu = document.querySelector('.navbar-menu');
+        const closeBtn = document.querySelector('.close-btn');
+        const overlay = document.querySelector('.menu-overlay');
+
+        menu.classList.remove('active');
+        closeBtn.classList.remove('active');
+        overlay.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+    </html>
