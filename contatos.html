@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Junior, Desenvolvedor FrontEnd formado pelo DevClub.">
+  <meta name="keywords" content="Frontend, HTML, CSS, JavaScript, DevClub, Junior, Programador">
+  <meta name="author" content="Junior">
+  <title>J8nior - Contato</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="contato.css" />
+  </head>
+  <body>
+<!-- Navbar Responsiva -->
+<header class="navbar">
+  <a href="index.html" class="logo">J8nior</a>
+
+  <!-- Ícone menu (hambúrguer) -->
+  <div class="menu-icon" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <!-- Botão fechar -->
+  <div class="close-btn" onclick="toggleMenu()">×</div>
+
+  <!-- Menu -->
+  <ul class="navbar-menu">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="servicos.html">Serviços</a></li>
+    <li><a href="contato.html" class="ativo">Contato</a></li>
+  </ul>
+
+  <!-- Overlay -->
+  <div class="menu-overlay" onclick="toggleMenu()"></div>
+</header>
+
+<main class="contato-container">
+  <h1>Fale Comigo</h1>
+  <p>Quer criar algo comigo? Preencha o formulário abaixo ou mande uma mensagem!</p>
+
+  <form action="https://formsubmit.co/SEUEMAIL@gmail.com" method="POST" class="form-contato">
+    <input type="text" name="nome" placeholder="Seu nome" required />
+    <input type="email" name="email" placeholder="Seu e-mail" required />
+    <textarea name="mensagem" rows="6" placeholder="Sua mensagem..." required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</main>
+
+<footer>
+  <p>&copy; 2025 J8nior. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.querySelector('.navbar-menu');
+    const closeBtn = document.querySelector('.close-btn');
+    const overlay = document.querySelector('.menu-overlay');
+
+    menu.classList.toggle('active');
+    closeBtn.classList.toggle('active');
+    overlay.classList.toggle('active');
+  }
+</script>
+  </body>
+</html>
