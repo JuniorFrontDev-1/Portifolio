@@ -13,33 +13,26 @@ function digitar() {
 
 window.onload = digitar;
 
-// Menu Hambúrguer
-const menuIcon = document.getElementById('menu-icon');
-const navbarMenu = document.querySelector('.navbar-menu');
-const closeBtn = document.getElementById('close-btn');
-const menuOverlay = document.createElement('div');
-menuOverlay.classList.add('menu-overlay');
 
-// Adiciona o overlay ao body
-document.body.appendChild(menuOverlay);
+const menuIcon = document.getElementById("menu-icon");
+const navbarMenu = document.getElementById("navbar-menu");
+const nav = document.querySelector(".navbar-nav");
+const closeBtn = document.getElementById("close-btn");
 
-// Abre o menu ao clicar no ícone do hambúrguer
-menuIcon.addEventListener('click', () => {
+menuIcon.addEventListener("click", () => {
+  nav.classList.add("active");
+});
+
+closeBtn.addEventListener("click", () => {
+  nav.classList.remove("active");
+});
+
+document.getElementById('menu-icon').addEventListener('click', () => {
+  const navbarMenu = document.getElementById('navbar-menu');
   navbarMenu.classList.toggle('active');
-  closeBtn.classList.toggle('active'); // Mostra o botão de fechar
-  menuOverlay.classList.toggle('active'); // Mostra o fundo semitransparente
 });
 
-// Fecha o menu ao clicar no botão de fechar
-closeBtn.addEventListener('click', () => {
+document.getElementById('close-btn').addEventListener('click', () => {
+  const navbarMenu = document.getElementById('navbar-menu');
   navbarMenu.classList.remove('active');
-  closeBtn.classList.remove('active');
-  menuOverlay.classList.remove('active');
-});
-
-// Fecha o menu quando o fundo semitransparente for clicado
-menuOverlay.addEventListener('click', () => {
-  navbarMenu.classList.remove('active');
-  closeBtn.classList.remove('active');
-  menuOverlay.classList.remove('active');
 });
