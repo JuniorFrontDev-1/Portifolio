@@ -1,0 +1,135 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #000;
+  border-bottom: 1px solid #222;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.navbar .logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.navbar-menu li a:hover {
+  color: #ffcc00;
+}
+
+.navbar-menu li a::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  background: #ffcc00;
+  transition: 0.3s;
+}
+
+.navbar-menu li a:hover::after {
+  width: 100%;
+}
+
+/* Ícone hambúrguer (mobile) */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+/* Botão fechar */
+.close-btn {
+  font-size: 32px;
+  color: #fff;
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 1001;
+}
+
+/* Overlay */
+.menu-overlay {
+  display: none;
+}
+
+.menu-overlay.active {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+  
+  .menu-icon {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
+  
+  .navbar-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #000;
+    flex-direction: column;
+    display: none;
+    padding: 20px;
+    z-index: 999;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .navbar-menu.active {
+    display: flex;
+  }
+  
+  .close-btn.active {
+    display: block;
+  }
+}
